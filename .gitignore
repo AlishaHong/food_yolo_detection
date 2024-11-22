@@ -6,3 +6,8 @@
 *.pt
 *.jpeg
 *.zip
+*.json
+*.txt
+*.names
+*.cache
+*.csv
