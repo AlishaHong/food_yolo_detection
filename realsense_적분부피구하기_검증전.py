@@ -6,8 +6,11 @@ import cv2
 from ultralytics import YOLO
 
 # YOLO Segmentation 모델 로드
-model_path = "best.pt"  # YOLO Segmentation 모델 파일 경로(학습된 모델)
-model = YOLO(model_path, verbose=False)  # YOLO 모델 객체 생성, verbose=False로 불필요한 로그 출력 방지
+# model_path = "best.pt"  # YOLO Segmentation 모델 파일 경로(학습된 모델)
+# model = YOLO(model_path, verbose=False)  # YOLO 모델 객체 생성, verbose=False로 불필요한 로그 출력 방지
+
+# 일단 사전학습된 모델로 확인해보기
+model = YOLO('yolo11n-seg.pt') 
 
 # RealSense 파이프라인 초기화
 pipeline = rs.pipeline()  # RealSense 카메라 스트리밍을 처리하는 파이프라인 객체 생성
@@ -51,6 +54,8 @@ def calculate_volume_integral(depth_frame, mask, pixel_area):
     return total_volume  # 계산된 부피 반환
 
 
+
+
 try:
     while True:  # 무한 루프 시작 (실시간 스트리밍 처리)
         # RealSense 카메라에서 프레임 데이터를 가져옴
@@ -70,6 +75,7 @@ try:
 
         # 픽셀 면적 계산 (카메라 FOV와 해상도를 기반으로 계산)
         # 예: RealSense D435의 FOV가 가로 87°, 세로 58°인 경우
+        # D455도 시야각 동일함
         # fov는 하드웨어마다 정해진 값이 있다. 사용하는 모델의 스펙을 확인해 볼것
         width, height = 640, 480  # 카메라 해상도
         fov_h = np.radians(87)  # 가로 FOV를 라디안으로 변환
