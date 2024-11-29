@@ -109,7 +109,7 @@ class SAM_Json2Yolo:
                 label_file.write(f"{cls_id} {' '.join(polygon_str.split())}\n")
 
 
-data_dir = "C:/Users/Sesame/Desktop/라벨링점검/valid/12011008"
+data_dir = "C:/Users/Sesame/Desktop/food_train_image/06012008"
 
 # SAM2 > Yolo 변환
 converter = SAM_Json2Yolo(data_dir)
