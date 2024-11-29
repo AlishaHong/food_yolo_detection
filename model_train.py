@@ -41,10 +41,10 @@ def getModel(version='n'):
     return model
 
 def trainModel(device, model, ypath):
-    
+
     print("모델 학습")
     data_path = ypath
-    model.train(data=data_path, device=device, epochs=300, batch = 8, name = '1st_seg_test_241121_backgroundSolved_100_8_2080')
+    model.train(data=data_path, device=device, epochs=500, batch = 8, name = '2nd_seg_test_241123_500_8_2080')
     
 
 if __name__ == "__main__":
