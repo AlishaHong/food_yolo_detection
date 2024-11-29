@@ -2,7 +2,7 @@ import os
 import cv2
 
 # basepath 설정
-basepath = "C:/Users/Sesame/Desktop/food_train_image/12011003"  # 실제 데이터가 담긴 폴더 경로로 변경해주세요.
+basepath = "C:/Users/Sesame/Desktop/food_valid_data/10012001"  # 실제 데이터가 담긴 폴더 경로로 변경해주세요.
 
 # resize 목표 크기
 target_size = (640, 640)
